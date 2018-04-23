@@ -79,13 +79,28 @@ function handleResponse(bookListObj) {
 		var book = bookList[i];
 		titles.push(book.volumeInfo.title);
 		authors.push(book.volumeInfo.authors[0]);
-		descriptions.push(book.volumeInfo.descriptions);
-		coverImage.push(book.volumeInfo.imageLinks.smallThumbail);
-		var titlePgh = document.createElement("p");
-		/* ALWAYS AVOID using the innerHTML property */
-		titlePgh.textContent = title;
-		bookDisplay.append(titlePgh);
+		descriptions.push(book.volumeInfo.description.split(" ").slice(0,30).join(" "));
+		coverImage.push(book.volumeInfo.imageLinks["smallThumbnail"]);
 	}
+
+	var current = 0;
+
+	var currentImage = document.getElementById('getImage');
+	var getCurrentImage = currentImage.getElementsByTagName('img')[0];
+	getCurrentImage.src = coverImage[current];
+
+	var currentTitle = document.getElementById('book-title');
+	currentTitle.textContent = titles[current];
+
+	var currentAuthor = document.getElementById('book-author');
+	currentAuthor.textContent = authors[current];
+
+	var currentDescription = document.getElementById('book-description');
+	currentDescription.textContent = descriptions[current];
+
+
+
+	
 }
 
 

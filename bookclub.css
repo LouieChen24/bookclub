@@ -24,6 +24,54 @@ body {
     cursor: pointer; /* Add a pointer on hover */
 }
 
+#overlay .container {
+	height: 100%;
+}
+
+#overlay .container .center {
+	padding: 30px;
+	margin-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#overlay .container .keep {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#overlay .container .center .center-image {
+	background-color: #fff;
+	height: 350px;
+	width: 500px;
+	display: flex;
+	padding: 10px;
+}
+
+#overlay .container .center .center-image .left {
+	width: 50%; 
+}
+
+#overlay .container .center .center-image .right{
+	width: 50%;
+}
+
+#overlay .container .center .center-image .right .title {
+	color: #000;
+	font-weight: 700;
+	font-size: 22px;
+	margin-top: 10px;
+}
+#overlay .container .center .center-image .right .author {
+	margin-top: 10px;
+}
+#overlay .container .center .center-image .right .description {
+	margin-top: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 header {
        text-align: center;
        padding: 10px;
