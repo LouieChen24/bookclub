@@ -21,29 +21,31 @@ Search for a book:
 <br>
 <input id="title" placeholder="title"> <input id="author" placeholder="author">
 <input id="isbn" placeholder="XXXXXXXXXX or XXX-XXXXXXXXXX"> 
-<div id="overlay" onclick="off()">
+<div id="overlay">
     <div class="container">
         <div class="btn">
-            <button>X</button>
+            <butto onclick="off()">X</button>
         </div>
         <div class="center">
-            <div class="left-arrow">Left</div>
+            <div class="left-arrow">
+                <button id="leftbtn">left</button>
+            </div>
             <div class="center-image">
                 <div class="left" id="getImage">
                     <img src="">
                 </div>
                 <div class="right">
                     <div class="title" id="book-title"></div>
-                    <div class="author" id="book-author">by</div>
+                    <div class="author" id="book-author"></div>
                     <div class="description" id="book-description"></div>
                 </div>
             </div>
             <div class="right-arrow">
-                <button>right</button>
+                <button id="rightbtn">right</button>
             </div>
           
         </div>
-        <div class="keep">
+        <div class="keep" id="keep">
                 <button>Keep</button>
             </div>
 
@@ -53,6 +55,8 @@ Search for a book:
 
 
 <div id="bookDisplay">
+    <div class="container">
+    </div>
 </div>
 
 </main>

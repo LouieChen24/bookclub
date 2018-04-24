@@ -49,6 +49,9 @@ body {
 	padding: 10px;
 }
 
+#leftbtn {
+	display: none;
+}
 #overlay .container .center .center-image .left {
 	width: 50%; 
 }

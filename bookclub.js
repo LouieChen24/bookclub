@@ -83,8 +83,13 @@ function handleResponse(bookListObj) {
 		coverImage.push(book.volumeInfo.imageLinks["smallThumbnail"]);
 	}
 
-	var current = 0;
+	createImages(titles, authors, descriptions, coverImage, 0);
 
+
+	
+}
+
+function createImages(titles, authors, descriptions, coverImage, current) {
 	var currentImage = document.getElementById('getImage');
 	var getCurrentImage = currentImage.getElementsByTagName('img')[0];
 	getCurrentImage.src = coverImage[current];
@@ -98,9 +103,66 @@ function handleResponse(bookListObj) {
 	var currentDescription = document.getElementById('book-description');
 	currentDescription.textContent = descriptions[current];
 
+	document.getElementById('rightbtn').addEventListener("click", function() {
+		if (current < titles.length-1) {
+			forwards(titles, authors, descriptions, coverImage, ++current);
+			document.getElementById('leftbtn').style.display = "block";
+			
+		} else if (current == titles.length -1){
+			document.getElementById('rightbtn').style.display = "none";
+		}
+		
+	});
 
+	document.getElementById('leftbtn').addEventListener("click", function() {
+		if (current > 0) {
+			backwards(titles, authors, descriptions, coverImage, --current);
+			document.getElementById('rightbtn').style.display = "block";
 
-	
+		} else if (current <= 0){
+			document.getElementById('leftbtn').style.display = "none";
+		}
+		
+	});
+
+	document.getElementById('keep').addEventListener("click", function() {
+		console.log(currentAuthor);
+	});
+
 }
 
+function forwards(titles, authors, descriptions, coverImage, current){
+	if (current != titles.length-1) {
+		document.getElementById('rightbtn').style.display = "block";
+	}
+	var currentImage = document.getElementById('getImage');
+	var getCurrentImage = currentImage.getElementsByTagName('img')[0];
+	getCurrentImage.src = coverImage[current];
 
+	var currentTitle = document.getElementById('book-title');
+	currentTitle.textContent = titles[current];
+
+	var currentAuthor = document.getElementById('book-author');
+	currentAuthor.textContent = authors[current];
+
+	var currentDescription = document.getElementById('book-description');
+	currentDescription.textContent = descriptions[current];
+}
+
+function backwards(titles, authors, descriptions, coverImage, current) {
+	if (current != 0) {
+		document.getElementById('leftbtn').style.display = "block";
+	}
+	var currentImage = document.getElementById('getImage');
+	var getCurrentImage = currentImage.getElementsByTagName('img')[0];
+	getCurrentImage.src = coverImage[current];
+
+	var currentTitle = document.getElementById('book-title');
+	currentTitle.textContent = titles[current];
+
+	var currentAuthor = document.getElementById('book-author');
+	currentAuthor.textContent = authors[current];
+
+	var currentDescription = document.getElementById('book-description');
+	currentDescription.textContent = descriptions[current];
+}
