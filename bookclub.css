@@ -110,7 +110,7 @@ header {
 	justify-content: center;
 }
 #bookDisplay {
-	height:115vh;
+	height: 100%;
 	margin: -8px;
 }
 #overlay #book
@@ -238,7 +238,7 @@ p {
 }
 
 #bookDisplay .new-tile-row {
-	height: 33vh;
+	height: 33%;
 	display: flex;
 }
 
