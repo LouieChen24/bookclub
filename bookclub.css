@@ -243,7 +243,7 @@ p {
 }
 
 #bookDisplay .new-tile-row .new-tile {
-	height: 250px;
+	height: 100%;
 	width: 33%;
 	background-color: #fff;
 	text-overflow: ellipsis;
@@ -282,4 +282,9 @@ p {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	color: #000;
+}
+
+.exit-button {
+	display: flex;
+	justify-content: flex-end;
 }

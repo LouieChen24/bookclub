@@ -161,6 +161,18 @@ function keep() {
 		right.className = "right";
 		center_image.appendChild(right);
 
+		
+		var b = document.createElement('button');
+		b.textContent = "x";
+		b.onclick = function() {
+			new_tile.remove();
+		}
+		var but = document.createElement('div');
+		but.className = "exit-button";
+		but.appendChild(b)
+		right.appendChild(but)
+
+
 		var title = document.createElement('div');
 		title.className = 'title';
 		title.textContent = titleC;
