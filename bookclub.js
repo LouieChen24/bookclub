@@ -81,14 +81,26 @@ function handleResponse(bookListObj) {
 	var authors = [];
 	var descriptions = []; 
 	var coverImage = [];
-	console.log(bookList);
 	/* write each title as a new paragraph */
 	for (i=0; i<bookList.length; i++) {
 		var book = bookList[i];
-		titles.push(book.volumeInfo.title);
-		authors.push(book.volumeInfo.authors[0]);
-		descriptions.push(book.volumeInfo.description.split(" ").slice(0,30).join(" "));
-		coverImage.push(book.volumeInfo.imageLinks["smallThumbnail"]);
+		if (!book.volumeInfo.title) {
+		} else {
+			titles.push(book.volumeInfo.title);
+		}
+		if (!book.volumeInfo.authors) {
+		} else {
+			authors.push(book.volumeInfo.authors[0]);
+		}
+		if (!book.volumeInfo.description) {
+		} else {
+			descriptions.push(book.volumeInfo.description.split(" ").slice(0,30).join(" "));
+		}
+		if (!book.volumeInfo.imageLinks) {
+		} else {
+			coverImage.push(book.volumeInfo.imageLinks["smallThumbnail"]);
+		}
+		
 	}
 	console.log(bookList);
 	createImages(titles, authors, descriptions, coverImage, 0);
@@ -294,6 +306,7 @@ function createImages(titles, authors, descriptions, coverImage, current) {
 	var currentImage = document.getElementById('getImage');
 	var getCurrentImage = currentImage.getElementsByTagName('img')[0];
 	getCurrentImage.src = coverImage[current];
+	
 
 	var currentTitle = document.getElementById('book-title');
 	currentTitle.textContent = titles[current];

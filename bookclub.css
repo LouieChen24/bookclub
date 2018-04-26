@@ -8,9 +8,6 @@ body {
 	flex-direction: column;
 	color: blue;
 }
-header {
-	
-}
 
 #home-head {
 	display: none;
@@ -80,10 +77,7 @@ header {
 	padding-top:8px;
 	padding-bottom:8px;
 }
-#image
-{
-	
-}
+
 #overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
