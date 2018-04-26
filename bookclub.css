@@ -203,6 +203,7 @@ h2 {
    text-align: left;
    color: black;
    padding-left: 100px;
+   width: 100%;
 }
 #no_title
 {
@@ -222,8 +223,6 @@ input {
 	border-radius: 5px;
 	font-size: medium;
 }
-
-
 
 p {
 	font-size: medium;
@@ -281,4 +280,37 @@ p {
 .exit-button {
 	display: flex;
 	justify-content: flex-end;
+}
+
+@media (max-width: 480px)
+{
+	h1 {
+		text-align:center;
+	}
+	h2 {
+		text-align: center;
+		padding: 0px;
+		font-size:24px;
+	} 
+	#search {
+		flex-direction: column;
+	}
+	#overlay .container .center .center-image {
+		height: 69.0vw;
+	}
+	#book-description {
+		overflow-y: auto;
+	}
+
+	#bookDisplay .new-tile-row {
+		display: flex;
+		flex-direction: column;
+		overflow-x: hidden;
+	}
+
+	#bookDisplay .new-tile-row .new-tile {
+		width: 80%;
+		padding: 20px;
+	}
+	
 }
